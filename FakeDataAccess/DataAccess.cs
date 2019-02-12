@@ -32,10 +32,14 @@ namespace FakeDataAccess
             ogrenciListesi.Add(new Ogrenci() { OgrenciAdi = "Ali", OgrenciSoyadi = "Temel", Sira = 7 });
             ogrenciListesi.Add(new Ogrenci() { OgrenciAdi = "Veli", OgrenciSoyadi = "Tekin", Sira = 7 });
         }
-
+        public List<Ogrenci> SelectAll()
+        {
+            return ogrenciListesi;
+        }
         public Ogrenci Sorgula(int id)
         {
-            return null;
+            Ogrenci ogr = ogrenciListesi.FirstOrDefault(item => item.Sira == id);
+            return ogr;
         }
 
         public int Update(Ogrenci ogr)
@@ -50,7 +54,8 @@ namespace FakeDataAccess
 
         public int Add(Ogrenci ogr)
         {
-            return 0;
+            ogrenciListesi.Add(ogr);
+            return ogr.Sira;
         }
     }
 }

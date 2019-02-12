@@ -11,5 +11,11 @@ namespace FakeDataAccess
         public string OgrenciAdi { get; set; }
         public string OgrenciSoyadi { get; set; }
         public int Sira { get; set; }
+
+        public override string ToString()
+        {
+
+            return this.Sira + "=" + this.OgrenciAdi + "=" + this.OgrenciSoyadi;
+        }
     }
 }
